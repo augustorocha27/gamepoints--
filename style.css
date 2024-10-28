@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.area {
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height: 100%; /* Ajuste aqui */
+    min-height: 100vh; /* Garante que a área ocupe pelo menos a altura da janela */
+    position: relative; /* Mantido como relative */
+    /* z-index removido para evitar problemas */
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96%;
+    overflow: hidden;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+body {
+    margin: 0; /* Remove a margem do body */
+    padding: 0; /* Remove o padding do body */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da janela */
+    display: flex;
+    flex-direction: column; /* Permite que o footer fique na parte inferior */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to left, #8f94fb, #4e54c8);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .logo img {
+    width: 40px;
+}
+
+header h1 {
+    flex: 1;
+    padding-left: 42%;
+    font-size: 2rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #d1e8ff;
+}
+
+.auth-button, .points-counter {
+    background: #4e54c8;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.auth-button:hover, .points-counter:hover {
+    transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Conteúdo Principal */
+main {
+    flex: 1; /* Permite que o main expanda para preencher o espaço */
+    display: flex;
+    flex-direction: column; /* Para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 40px;
+    animation: fadeIn 1.5s ease;
+}
+.white-title {
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.video-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#video-player {
+    width: 800px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#random-button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background: linear-gradient(to right, #003366, #0073e6);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: showButton 0.5s forwards;
+    z-index: 10;
+}
+
+@keyframes showButton {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Loja */
+.shop {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 200px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Carrossel de Imagens */
+.carousel-container {
+    overflow: hidden;
+    width: 85%; /* Limita a largura total do carrossel */
+    max-width: 700px; /* Define uma largura máxima */
+    margin: 20px auto; /* Centraliza o carrossel na página */
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: max-content;
+}
+
+.carousel-item {
+    min-width: 160px; /* Largura dos itens */
+    height: 200px; /* Aumenta a altura dos itens */
+    margin-right: 10px; /* Espaço entre as imagens */
+}
+
+.carousel-item img {
+    width: 100%; /* A largura da imagem ocupa todo o espaço do item */
+    height: 100%; /* A altura da imagem ocupa todo o espaço do item */
+    object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
+    border-radius: 8px;
+}
+
+
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.carousel-button.prev {
+    left: 10px;
+    z-index: 10;
+}
+
+.carousel-button.next {
+    right: 10px;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Nova Seção do Jogo de Corrida */
+.game-announcement {
+    background: #ffffff; /* Fundo branco para destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaçamento acima da seção */
+    animation: fadeIn 1.5s ease; /* Animação ao aparecer */
+    width: 80%; /* Largura da seção */
+    max-width: 800px; /* Largura máxima */
+    z-index: 10;
+}
+
+.game-announcement h2 {
+    color: #4e54c8; /* Cor do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+.game-announcement p {
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin-bottom: 10px; /* Espaçamento abaixo de cada parágrafo */
+}
+
+.game-announcement ul {
+    margin-left: 20px; /* Margem à esquerda para a lista */
+    list-style-type: disc; /* Estilo da lista */
+}
+
+.game-announcement a {
+    color: #4e54c8; /* Cor do link */
+    text-decoration: none; /* Sem sublinhado */
+    font-weight: bold; /* Negrito para destaque */
+  
+}
+
+.game-announcement a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+ 
+
+footer {
+    margin-top: auto; /* Faz com que o footer fique sempre na parte inferior */
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to left, #8f94fb, #4e54c8);
+    color: #fff;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}

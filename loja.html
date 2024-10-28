@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="stylesheet" href="style-loja.css">
+    <style>
+        /* Estilos da Tabela */
+        #product-list-table {
+            width: 80%; /* Largura da tabela */
+            max-width: 800px; /* Largura máxima */
+            border-collapse: collapse; /* Remove espaços entre células */
+            margin: 20px auto; /* Centraliza a tabela horizontalmente */
+            background: #fff; /* Cor de fundo da tabela */
+            border-radius: 8px; /* Bordas arredondadas */
+            overflow: hidden; /* Para bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra da tabela */
+        }
+
+        #product-list-table thead {
+            background: linear-gradient(to left, #8f94fb, #4e54c8); /* Cor de fundo do cabeçalho */
+            color: #fff; /* Cor do texto no cabeçalho */
+        }
+
+        #product-list-table th,
+        #product-list-table td {
+            padding: 12px; /* Espaçamento interno das células */
+            text-align: center; /* Alinhamento do texto ao centro */
+        }
+
+        #product-list-table th {
+            font-weight: bold; /* Negrito para o cabeçalho */
+        }
+
+        #product-list-table tr:nth-child(even) {
+            background: #f2f2f2; /* Cor de fundo para linhas pares */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ot-new-logo-of-formula-e-with-previous-versions-in-the-last-v0-vqqgra64jn2a1-removebg-preview.png" alt="Logo">
+        </div>
+        <h1>Loja</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <div class="points-counter">Pontos: <span id="points">0</span></div>
+        </nav>
+    </header>
+
+
+
+    <div class="area">
+        <main class="shop">
+            <div class="product">
+                <img src="bone gradiernte.jpg" alt="Produto 1">
+                <h2>Camo Cap</h2>
+                <p>14.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="boné azul.jpg" alt="Produto 2">
+                <h2>Repreve 9FIFTY Cap</h2>
+                <p>18.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="boné preto.jpg" alt="Produto 3">
+                <h2>New Era Repreve</h2>
+                <p>15.500</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="mochila.jpg" alt="Produto 4">
+                <h2>Packable Backpack</h2>
+                <p>35.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="moletom azul.jpg" alt="Produto 5">
+                <h2>Tonal Hoodie</h2>
+                <p>30.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="garrafa.jpg" alt="Produto 6">
+                <h2>Gradient Water Bottle</h2>
+                <p>7.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="branco.jpg" alt="Produto 6">
+                <h2>New Era Hankook</h2>
+                <p>15.000</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product">
+                <img src="trucker.jpg" alt="Produto 6">
+                <h2>Wordmark Trucker Cap</h2>
+                <p>12.000</p>
+                <button>Comprar</button>
+            </div>
+            <!-- Mais produtos podem ser adicionados aqui -->
+        </main>
+    
+        <main>
+            <div class="points" id="store-header-points">Pontos GamePoints: 0</div>
+            <table id="product-list-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Usuário</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </main>  
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+            </ul>
+    </div>
+    
+    
+    <footer>
+        <p>&copy; 2024 Minha Empresa</p>
+    </footer>
+
+    <script>
+        // Recupera os pontos do localStorage ao carregar a página "Loja"
+        document.addEventListener('DOMContentLoaded', () => {
+            const pointsDisplay = document.getElementById('points');
+            const pontosSalvos = localStorage.getItem('pontos');
+
+            if (pontosSalvos) {
+                pointsDisplay.textContent = pontosSalvos;
+            }
+        });
+    </script>
+
+    <script>
+        function generateRandomPoints() {
+            const points = Math.floor(Math.random() * (15000 - 10 + 1)) + 10;
+            document.getElementById('store-header-points').textContent = `Pontos: ${points}`;
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // troca elementos
+            }
+            return array;
+        }
+
+        function getRandomTime() {
+            // Gera um número aleatório de 15 a 60
+            const randomSeconds = Math.floor(Math.random() * (60 - 15 + 1)) + 15;
+            const minutes = Math.floor(randomSeconds / 60);
+            const seconds = randomSeconds % 60;
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`; // Formata como MM:SS
+        }
+
+        function populateTable() {
+            const users = [
+                'astro_wanderer23',
+                'pixel_pioneer89',
+                'code_maestro77',
+                'galaxy_rider42',
+                'byte_smith99',
+                'stellar_quester56',
+                'data_dreamer88',
+                'cosmic_artisan34',
+                'cyber_horizon21'
+            ];
+
+            // Adiciona "Você" como o primeiro usuário
+            const fixedUser = 'Você';
+            
+            // Embaralha a lista de usuários restantes
+            const shuffledUsers = shuffleArray(users);
+
+            // Cria um array para armazenar os tempos gerados
+            const userTimes = [getRandomTime(), ...shuffledUsers.map(() => getRandomTime())];
+
+            // Cria um array de objetos com usuário e seu tempo
+            const usersWithTimes = [{ name: fixedUser, time: userTimes[0] }, ...shuffledUsers.map((user, index) => ({
+                name: user,
+                time: userTimes[index + 1]
+            }))];
+
+            // Ordena os usuários com base no tempo, mantendo "Você" em primeiro
+            usersWithTimes.sort((a, b) => {
+                const [minA, secA] = a.time.split(':').map(Number);
+                const [minB, secB] = b.time.split(':').map(Number);
+                return minA * 60 + secA - (minB * 60 + secB); // Compara em segundos
+            });
+
+            const tableBody = document.querySelector('#product-list-table tbody');
+            tableBody.innerHTML = ''; // Limpa a tabela antes de preenchê-la
+
+            usersWithTimes.forEach((userWithTime, index) => {
+                const row = document.createElement('tr');
+                const numberCell = document.createElement('td');
+                const itemCell = document.createElement('td');
+                const timeCell = document.createElement('td');
+
+                numberCell.textContent = index + 1; // Números em ordem crescente
+                itemCell.textContent = userWithTime.name;
+                timeCell.textContent = userWithTime.time; // Tempo ordenado
+
+                row.appendChild(numberCell);
+                row.appendChild(itemCell);
+                row.appendChild(timeCell); // Adiciona a nova célula à linha
+                tableBody.appendChild(row);
+            });
+        }
+
+        window.onload = function() {
+            generateRandomPoints();
+            populateTable();
+        };
+    </script>
+</body>
+</html>

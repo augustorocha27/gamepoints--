@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="ot-new-logo-of-formula-e-with-previous-versions-in-the-last-v0-vqqgra64jn2a1-removebg-preview.png" alt="Logo">
+        </div>
+        <h1>WatchPoints</h1>
+        <nav>
+            <a href="loja.html">Loja</a>
+            <button class="auth-button">Login/Cadastrar</button>
+        </nav>
+    </header>
+
+    <div class="area">
+    
+        <!-- Player de Vídeo -->
+        <main>
+            <h2 class="white-title">Biggest Winning Margins in Formula E</h2>
+            <br>
+            <br>
+            <div class="video-container">
+                <video id="video-player" controls>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <button id="random-button" class="hidden">O</button>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="white-title">Confira as novidades abaixo:</h2>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item"><img src="IMG_5395.png" alt="Imagem 1"></div>
+                    <div class="carousel-item"><img src="IMG_5396.png" alt="Imagem 2"></div>
+                    <div class="carousel-item"><img src="IMG_5401.png" alt="Imagem 3"></div>
+                    <div class="carousel-item"><img src="IMG_5395.png" alt="Imagem 4"></div>
+                    <div class="carousel-item"><img src="IMG_5396.png" alt="Imagem 5"></div>
+                    <div class="carousel-item"><img src="IMG_5399.png" alt="Imagem 1"></div>
+                    <div class="carousel-item"><img src="IMG_5400.png" alt="Imagem 2"></div>
+                    <div class="carousel-item"><img src="IMG_5401.png" alt="Imagem 3"></div>
+                    <div class="carousel-item"><img src="IMG_5395.png" alt="Imagem 4"></div>
+                    <div class="carousel-item"><img src="IMG_5396.png" alt="Imagem 5"></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+    
+            <!-- Seção de Anúncio do Jogo -->
+            <div class="game-announcement">
+                <h2>Novo Jogo de Corrida!</h2>
+                <p>Estamos animados para anunciar o lançamento do nosso mais novo jogo de corrida, "Race Points"! Prepare-se para acelerar em pistas emocionantes, competir contra amigos e desafiar seus limites. Aqui estão algumas características do jogo:</p>
+                <ul>
+                    <li>Pistas desafiadoras de tirar o fôlego.</li>
+                    <li>Vários carros e personalizações.</li>
+                    <li>Eventos regulares e atualizações de conteúdo.</li>
+                </ul>
+                <p>Pronto para entrar na corrida? <a href="https://simmer.io/@augusto23/gamepoints-race">Clique aqui para jogar!</a></p>
+            </div>
+        </main>
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <footer>
+        &copy; 2024 GamePoints. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
